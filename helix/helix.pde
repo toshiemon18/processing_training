@@ -1,4 +1,4 @@
-float dth = 0.05;
+float dth = 10;
 float radius = 200;
 float y_rot = 0;
 float dr = 0.3;
@@ -21,7 +21,7 @@ void draw() {
 
   float y = 0;
 
-  for(float ang = 0; ang <= 360 * 40; ang += 10){
+  for(float ang = 0; ang <= 360 * 40; ang += dth){
     if ((y > 0 && y < height * 0.25) || (y > height * 0.5 && y < height * 0.75)) {
       radius += dr;
     } else if ((y > height * 0.25 && y < height * 0.5) || (y > height * 0.75 && y < height)) {
@@ -40,5 +40,5 @@ void draw() {
     strokeWeight(2);
     point(x, y, z);
   }
-  radius = 0;
+ radius = 0;
 }

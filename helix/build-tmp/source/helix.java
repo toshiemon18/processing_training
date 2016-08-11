@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class helix extends PApplet {
 
-float dth = 0.05f;
+float dth = 10;
 float radius = 200;
 float y_rot = 0;
 float dr = 0.3f;
@@ -37,7 +37,7 @@ public void draw() {
 
   float y = 0;
 
-  for(float ang = 0; ang <= 360 * 40; ang += 10){
+  for(float ang = 0; ang <= 360 * 40; ang += dth){
     if ((y > 0 && y < height * 0.25f) || (y > height * 0.5f && y < height * 0.75f)) {
       radius += dr;
     } else if ((y > height * 0.25f && y < height * 0.5f) || (y > height * 0.75f && y < height)) {
@@ -49,6 +49,7 @@ public void draw() {
       continue;
     }
     float rad = radians(ang);
+    float rad_p = radians(ang - dth);
     float x = (radius * cos(rad));
     float z = (radius * sin(rad));
 
@@ -56,7 +57,7 @@ public void draw() {
     strokeWeight(2);
     point(x, y, z);
   }
-  radius = 0;
+ radius = 0;
 }
   public void settings() {  size(500, 500, P3D); }
   static public void main(String[] passedArgs) {
