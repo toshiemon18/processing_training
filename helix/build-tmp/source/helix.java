@@ -27,7 +27,7 @@ public void setup() {
 
 public void update() {
   background(0);
-  y_rot += 0.1f;
+  y_rot += 0.01f;
 }
 
 public void draw() {
@@ -49,7 +49,6 @@ public void draw() {
       continue;
     }
     float rad = radians(ang);
-    float rad_p = radians(ang - dth);
     float x = (radius * cos(rad));
     float z = (radius * sin(rad));
 

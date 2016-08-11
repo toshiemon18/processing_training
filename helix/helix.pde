@@ -11,7 +11,7 @@ void setup() {
 
 void update() {
   background(0);
-  y_rot += 0.1;
+  y_rot += 0.01;
 }
 
 void draw() {
