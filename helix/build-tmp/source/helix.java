@@ -17,6 +17,8 @@ public class helix extends PApplet {
 float dth = 0.05f;
 float radius = 200;
 float y_rot = 0;
+float dr = 0.3f;
+float dy = 0.5f;
 
 public void setup() {
   
@@ -37,17 +39,17 @@ public void draw() {
 
   for(float ang = 0; ang <= 360 * 40; ang += 10){
     if ((y > 0 && y < height * 0.25f) || (y > height * 0.5f && y < height * 0.75f)) {
-      radius += 0.3f;
+      radius += dr;
     } else if ((y > height * 0.25f && y < height * 0.5f) || (y > height * 0.75f && y < height)) {
-      radius -= 0.3f;
+      radius -= dr;
     }
     float rad = radians(ang);
     float x = (radius * cos(rad));
-    y += 0.5f;
+    y += dy;
     float z = (radius * sin(rad));
 
     stroke(255);
-    strokeWeight(3);
+    strokeWeight(2);
     point(x, y, z);
   }
   radius = 0;
