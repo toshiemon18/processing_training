@@ -27,9 +27,13 @@ void draw() {
     } else if ((y > height * 0.25 && y < height * 0.5) || (y > height * 0.75 && y < height)) {
       radius -= dr;
     }
+    if (y < height) {
+      y += dy;
+    } else {
+      continue;
+    }
     float rad = radians(ang);
     float x = (radius * cos(rad));
-    y += dy;
     float z = (radius * sin(rad));
 
     stroke(255);
